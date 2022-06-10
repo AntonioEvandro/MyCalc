@@ -6,8 +6,6 @@ let erasebtn = document.querySelector('#erase');
 let clearbtn = document.querySelector('#clear');
 let evaluate = document.querySelector('#evaluate');
 
-
-
 // Visor da calculadora
 let realTimeScreenValue = []
 
@@ -24,7 +22,6 @@ clearbtn.addEventListener("click", () => {
 // Função anexada a todos os botões
 buttons.forEach((btn) => {
 
-
     btn.addEventListener("click", () => {
         // Se o botão clicado não é o botão de apagar
         if (!btn.id.match('erase')) {
@@ -34,11 +31,8 @@ buttons.forEach((btn) => {
 
             // Executar e mostrar a resposta em tempo real
             if (btn.classList.contains('num_btn')) {
-
                 answerScreen.innerHTML = eval(realTimeScreenValue.join(''));
-
             }
-
         }
 
         // Quando o evento for um botão
@@ -59,6 +53,5 @@ buttons.forEach((btn) => {
         if (typeof eval(realTimeScreenValue.join('')) == 'undefined') {
             answerScreen.innerHTML = 0
         }
-
     })
 })
